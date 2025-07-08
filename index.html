@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aakash Hotels</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #007bff;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 80vh; /* Adjust the height as needed */
+            background-image: url('https://img.freepik.com/premium-photo/abstract-blur-defocused-hotel-lobby-lounge-interior_121111-1507.jpg?w=1060');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            overflow: hidden; /* Ensure overflow does not affect layout */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            z-index: 1; /* Ensure overlay stays above content */
+        }
+
+        .hero-content {
+            position: relative; /* Ensure content stays above overlay */
+            z-index: 2; /* Ensure content stays above overlay */
+        }
+
+        .about-us {
+            background-color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            margin: 50px auto;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .about-us h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about-us p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .section-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .section-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+        }
+
+        .section-content img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-book {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn-book:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="#" class="logo">Aakash Hotels</a>
+        <div class="nav-buttons" role="navigation">
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('rooms')">Rooms</a>
+            <a href="#" onclick="showSection('dining')">Dining</a>
+            <a href="#" onclick="showSection('facilities')">Facilities</a>
+            <a href="#" onclick="showSection('contact')">Contact</a>
+        </div>
+    </div>
+
+    <section class="hero-section" id="home">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to Aakash Hotels</h1>
+            <p>Where luxury meets comfort</p>
+        </div>
+    </section>
+
+    <section class="rooms-section" id="rooms" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Our Rooms</h2>
+            <div class="section-content">
+                <div class="section-item">
+                    <img src="https://media.istockphoto.com/id/627892060/photo/hotel-room-suite-with-view.jpg?s=612x612&w=0&k=20&c=YBwxnGH3MkOLLpBKCvWAD8F__T-ypznRUJ_N13Zb1cU=" alt="Deluxe Room">
+                    <h3>Deluxe Room</h3>
+                    <p>Experience luxury in our spacious Deluxe rooms, equipped with modern amenities.</p>
+                </div>
+                <div class="section-item">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/39/785/145/presidential-suite-vacation-resort-tourism-wallpaper-preview.jpg" alt="Executive Suite">
+                    <h3>Executive Suite</h3>
+                    <p>Enjoy panoramic views and exclusive services in our Executive Suites.</p>
+                </div>
+                <div class="section-item">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/359/481/80/luxury-hotel-room-bedroom-furniture-set-wallpaper-preview.jpg" alt="Premium Suite">
+                    <h3>Premium Suite</h3>
+                    <p>Indulge in ultimate comfort and luxury in our beautifully appointed Premium Suites.</p>
+                </div>
+            </div>
+            <a href="rooms.html" class="btn-book">Book Now</a>
+        </div>
+    </section>
+
+    <section class="about-us" id="about" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="section-content">
+                <p>Welcome to Aakash Hotels, where luxury meets comfort. We pride ourselves on offering exceptional service and creating memorable experiences for our guests. Explore our elegant rooms and suites, and discover why Aakash Hotels is your perfect choice for both business and leisure.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-us" id="dining" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Dining</h2>
+            <div class="section-content">
+                <div class="section-item">
+                    <img src="https://t3.ftcdn.net/jpg/03/24/73/92/360_F_324739203_keeq8udvv0P2h1MLYJ0GLSlTBagoXS48.jpg" alt="Dining 1">
+                    <h3>Restaurant</h3>
+                    <p>Enjoy delectable cuisines prepared by our expert chefs in a sophisticated ambiance.</p>
+                </div>
+                <div class="section-item">
+                    <img src="https://w0.peakpx.com/wallpaper/551/168/HD-wallpaper-the-lounge-table-furnitures-view-wine-chair-bar-counter-light.jpg" alt="Dining 2">
+                    <h3>Bar & Lounge</h3>
+                    <p>Relax with a refreshing drink and socialize in our stylish Bar & Lounge area.</p>
+                </div>
+                <div class="section-item">
+                    <img src="https://c1.wallpaperflare.com/preview/595/834/491/coffee-cafe-coffee-shop-glass.jpg" alt="Dining 3">
+                    <h3>Coffee Shop</h3>
+                    <p>Experience a cozy and inviting atmosphere at our Coffee Shop with a variety of beverages and snacks.</p>
+                </div>
+            </div>
+            <a href="dining.html" class="btn-book">Book Now</a>
+        </div>
+    </section>
+
+    <section class="about-us" id="facilities" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Facilities</h2>
+            <div class="section-content">
+                <div class="section-item">
+                    <img src="https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg?cs=srgb&dl=pexels-pixabay-221457.jpg&fm=jpg" alt="Facilities 1">
+                    <h3>Swimming Pool</h3>
+                    <p>Take a dip in our expansive swimming pool and unwind with poolside services.</p>
+                </div>
+                <div class="section-item">
+                    <img src="https://amatistaspa.ca/wp-content/uploads/2021/01/health-wellness-spa-treatments.jpg" alt="Facilities 2">
+                    <h3>Spa & Wellness</h3>
+                    <p>Rejuvenate your senses with therapeutic spa treatments and wellness programs.</p>
+                </div>
+                <div class="section-item">
+                    <img src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?cs=srgb&dl=pexels-willpicturethis-1954524.jpg&fm=jpg" alt="Facilities 3">
+                    <h3>Fitness Center</h3>
+                    <p>Stay fit and healthy with state-of-the-art equipment and personal training sessions.</p>
+                </div>
+            </div>
+            <a href="facilities.html" class="btn-book">Book Now</a>
+        </div>
+    </section>
+
+    <section class="about-us" id="contact" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="section-content">
+                <p>If you have any questions or would like to make a reservation, please contact us using the information below:</p>
+                <ul>
+                    <li><strong>Address:</strong> 123 Aakash Street, City, Country</li>
+                    <li><strong>Phone:</strong> +123 456 789</li>
+                    <li><strong>Email:</strong> info@aakashhotels.com</li>
+                </ul>
+                <p>We are available 24/7 to assist you with any queries you may have.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Aakash Hotels. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+
+            // Ensure hero section remains visible for 'home' section
+            if (sectionId !== 'home') {
+                document.getElementById('home').style.display = 'none';
+            } else {
+                document.getElementById('home').style.display = 'flex';
+            }
+        }
+    </script>
+</body>
+</html>

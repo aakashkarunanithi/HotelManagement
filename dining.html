@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Dining Experience - Aakash Hotels</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://img.freepik.com/premium-photo/dining-room-with-view-lake-mountains-background_865967-43385.jpg?w=740'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #f5f5f5;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23007bff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M7 10l5 5 5-5H7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            padding-right: 30px;
+        }
+
+        .time-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .time-group .form-group {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .btn-submit {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 200px;
+            margin: 20px auto 0;
+            display: block;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Explicitly target input[type="submit"] to ensure it always has a blue background */
+        input[type="submit"].btn-submit {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Book a Dining Experience</h1>
+            <p>Reserve your table at Aakash Hotels</p>
+        </div>
+        <form action="submit_dining.php" method="POST">
+            <div class="form-group">
+                <label for="diningOption">Dining Option</label>
+                <select id="diningOption" name="diningOption" required>
+                    <option value="">Select Dining Option</option>
+                    <option value="Restaurant">Restaurant</option>
+                    <option value="Bar & Lounge">Bar & Lounge</option>
+                    <option value="Coffee Shop">Coffee Shop</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Reservation Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="time-group">
+                <div class="form-group">
+                    <label for="timeFrom">Reservation Time From</label>
+                    <input type="time" id="timeFrom" name="timeFrom" required>
+                </div>
+                <div class="form-group">
+                    <label for="timeTo">Reservation Time To</label>
+                    <input type="time" id="timeTo" name="timeTo" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Reservation" class="btn-submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
